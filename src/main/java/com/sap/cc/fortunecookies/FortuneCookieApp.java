@@ -1,13 +1,13 @@
-package com.sap.cc.springbootskeleton;
+package com.sap.cc.fortunecookies;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootSkeletonApplication {
+public class FortuneCookieApp {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootSkeletonApplication.class, args);
+		SpringApplication.run(FortuneCookieApp.class, args);
 	}
 
 }
