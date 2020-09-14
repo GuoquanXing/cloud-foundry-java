@@ -15,7 +15,7 @@ public class V2__LoadQuotes extends BaseJavaMigration {
     public void migrate(Context context) throws Exception {
         URI uri = ResourceUtils.getFile("classpath:fortunes.txt").toURI();
         String contents = new String(Files.readAllBytes(Paths.get(uri)));
-        String[] quotes = contents.split("\n~~~~~\n");
+        String[] quotes = contents.split("(\r\n|\n|\r)~~~~~(\r\n|\n|\r)");
         String sql = "INSERT INTO quote (quote) VALUES (?)";
         try (PreparedStatement stmt = context.getConnection().prepareStatement(sql)) {
             for (String quote : quotes) {
